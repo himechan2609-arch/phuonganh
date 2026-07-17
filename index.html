@@ -153,7 +153,6 @@
   .hero-visual{ display: flex; align-items: center; justify-content: center; }
   .avatar-wrap{ position: relative; }
   
-  /* Khung AVT vuông góc bo tròn nhẹ */
   .avatar-frame{
     width: 240px; height: 240px; border-radius: var(--radius-lg);
     background: linear-gradient(150deg, var(--sky-soft), var(--gold-tape));
@@ -277,32 +276,9 @@
   }
   .btn-mini-detail{ background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; box-shadow: 0 10px 18px -10px rgba(11,37,69,0.5); }
   .btn-mini-detail:hover{ transform: translateY(-3px); }
-  .btn-mini-doc{ background: var(--sky-pale); color: var(--navy); border: 1.5px solid rgba(11,37,69,0.18); }
-  .btn-mini-doc:hover{ transform: translateY(-3px); background: #fff; }
   
   .btn-mini-drive{ background: #fff; color: #1D63D1; border: 1.5px solid #1D63D1; }
   .btn-mini-drive:hover{ background: var(--sky-cream); transform: translateY(-3px); }
-
-  .doc-portal{
-    display: none; max-height: 0; opacity: 0; overflow: hidden;
-    transition: max-height 0.55s cubic-bezier(.2,.8,.3,1), opacity 0.45s ease, margin-top 0.45s ease;
-    margin-top: 0;
-  }
-  .doc-portal.open{ display: block; max-height: calc(70vh + 100px); opacity: 1; margin-top: 14px; }
-  .doc-portal-inner{
-    background: var(--sky-cream); border: 1px solid rgba(11,37,69,0.2);
-    border-radius: 16px; padding: 12px; box-shadow: var(--shadow-soft);
-  }
-  .doc-portal-label{
-    display: inline-block; font-family: 'Fraunces', serif; font-size: 0.86rem; color: var(--navy);
-    background: var(--sky-soft); border-radius: 10px; padding: 4px 12px; margin-bottom: 10px;
-  }
-  .doc-frame-wrap{ position: relative; width: 100%; height: 58vh; min-height: 340px; border-radius: 12px; overflow: hidden; background: #fff; }
-  .doc-frame{ width: 100%; height: 100%; border: 0; position: relative; z-index: 1; }
-  .doc-placeholder{
-    position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px; text-align: center; color: var(--ink-soft); font-size: 0.84rem; padding: 20px; background: var(--sky-cream);
-  }
 
   /* ===== Modal xem chi tiết ===== */
   .modal-overlay{
@@ -383,8 +359,6 @@
     nav{ flex-direction: column; gap: 12px; padding: 14px 5vw; margin: 10px 4vw 0; }
     .nav-links{ flex-wrap: wrap; justify-content: center; }
     .postcard{ padding: 26px 18px; }
-    .doc-frame-wrap{ height: 60vh; min-height: 380px; }
-    .doc-portal.open{ max-height: calc(60vh + 100px); }
     .modal-box{ padding: 28px 22px; }
     .speech-bubble{ display: none; }
   }
@@ -499,16 +473,7 @@
         <p class="goal-line">Nắm chắc thao tác quản lý tệp trên máy tính, hình thành thói quen sắp xếp tài liệu học tiếng Anh khoa học.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(0)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Xem tại chỗ</button>
           <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 1" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -519,16 +484,7 @@
         <p class="goal-line">Biết khai thác các nguồn học thuật uy tín (JSTOR, Google Scholar) và sàng lọc thông tin đáng tin cậy về ngôn ngữ học.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(1)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Xem tại chỗ</button>
           <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 2" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -539,16 +495,7 @@
         <p class="goal-line">Chủ động điều phối công nghệ, biến AI thành trợ lý đắc lực trong quá trình luyện tập tiếng Anh.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(2)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Xem tại chỗ</button>
           <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 3" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -559,36 +506,29 @@
         <p class="goal-line">Phối hợp hiệu quả với nhóm qua nền tảng số khi làm các dự án thuyết trình tiếng Anh, quản lý tiến độ rõ ràng.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(3)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Xem tại chỗ</button>
           <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 4" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- BÀI 5: Đã lược bỏ hoàn toàn nút và phần iframe Xem tại chỗ -->
+      <!-- BÀI 5 -->
       <div class="work-card reveal">
         <span class="idx">05.</span>
         <h3>📘 Sáng tạo nội dung số</h3>
         <p class="goal-line">Chuyển hoá kiến thức ngôn ngữ thành các ấn phẩm truyền thông trực quan, sinh động bằng tiếng Anh.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(4)">🔍 Xem chi tiết</button>
+          <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
         </div>
       </div>
 
-      <!-- BÀI 6: Đã lược bỏ hoàn toàn nút và phần iframe Xem tại chỗ -->
+      <!-- BÀI 6 -->
       <div class="work-card reveal">
         <span class="idx">06.</span>
         <h3>📘 An toàn và liêm chính học thuật trong môi trường số</h3>
         <p class="goal-line">Hiểu rõ giới hạn của AI, vận dụng công cụ này minh bạch và trung thực trong các bài tập tiếng Anh học thuật.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(5)">🔍 Xem chi tiết</button>
+          <a class="btn-mini btn-mini-drive" href="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu?usp=drive_link" target="_blank">🔗 Mở Drive</a>
         </div>
       </div>
 
@@ -749,17 +689,6 @@
       setTimeout(()=>b.remove(), 1200);
     }
   });
-
-  // ===== Cổng đọc tài liệu =====
-  function toggleDocPortal(btn){
-    const card = btn.closest('.work-card');
-    const portal = card.querySelector('.doc-portal');
-    if(portal){
-      portal.classList.toggle('open');
-      btn.textContent = portal.classList.contains('open') ? '📕 Thu gọn' : '📖 Xem tại chỗ';
-    }
-  }
-  window.toggleDocPortal = toggleDocPortal;
 
   // ===== Modal xem chi tiết quy trình thực hiện =====
   const workDetails = [
