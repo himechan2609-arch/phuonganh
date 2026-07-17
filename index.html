@@ -153,7 +153,7 @@
   .hero-visual{ display: flex; align-items: center; justify-content: center; }
   .avatar-wrap{ position: relative; }
   
-  /* Đã cập nhật khung AVT từ tròn (50%) sang vuông bo tròn nhẹ (var(--radius-lg)) */
+  /* Khung AVT vuông góc bo tròn nhẹ */
   .avatar-frame{
     width: 240px; height: 240px; border-radius: var(--radius-lg);
     background: linear-gradient(150deg, var(--sky-soft), var(--gold-tape));
@@ -196,7 +196,7 @@
   .reveal{ opacity: 0; transform: translateY(40px) scale(0.97); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.3,1.15); }
   .reveal.in-view{ opacity: 1; transform: translateY(0) scale(1); }
 
-  /* ===== Giới thiệu — dải thông tin ngang + 2 khối bên dưới ===== */
+  /* ===== Giới thiệu ===== */
   .info-strip{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 26px; }
   @media (max-width: 760px){ .info-strip{ grid-template-columns: repeat(2, 1fr); } }
   .stat-pill{
@@ -237,7 +237,7 @@
     background: rgba(175,214,255,0.4); color: var(--navy); border: 1px solid rgba(11,37,69,0.18);
   }
 
-  /* ===== BÀI TẬP — lưới thẻ 2 cột + xem chi tiết ===== */
+  /* ===== BÀI TẬP ===== */
   #bai-tap{ padding-top: 36px; padding-bottom: 36px; }
   .postcard{
     position: relative; background: var(--paper); border-radius: var(--radius-lg);
@@ -280,7 +280,6 @@
   .btn-mini-doc{ background: var(--sky-pale); color: var(--navy); border: 1.5px solid rgba(11,37,69,0.18); }
   .btn-mini-doc:hover{ transform: translateY(-3px); background: #fff; }
   
-  /* Thêm phong cách nút Drive mới gọn gàng */
   .btn-mini-drive{ background: #fff; color: #1D63D1; border: 1.5px solid #1D63D1; }
   .btn-mini-drive:hover{ background: var(--sky-cream); transform: translateY(-3px); }
 
@@ -304,12 +303,8 @@
     position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center;
     gap: 8px; text-align: center; color: var(--ink-soft); font-size: 0.84rem; padding: 20px; background: var(--sky-cream);
   }
-  .doc-placeholder span{ font-size: 2rem; }
-  .doc-placeholder code{ background: #fff; padding: 2px 8px; border-radius: 8px; border: 1px solid rgba(11,37,69,0.18); }
-  .doc-frame-wrap.is-empty .doc-frame{ display: none; }
-  .doc-frame-wrap.is-empty .doc-placeholder{ display: flex; }
 
-  /* ===== Modal xem chi tiết quy trình ===== */
+  /* ===== Modal xem chi tiết ===== */
   .modal-overlay{
     position: fixed; inset: 0; z-index: 200; background: rgba(11,37,69,0.55);
     backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 24px;
@@ -349,7 +344,7 @@
   }
   .modal-result b{ color: var(--navy-deep); }
 
-  /* ===== Tổng kết — stepper dọc kiểu mới ===== */
+  /* ===== Tổng kết ===== */
   .summary-wrap{ max-width: 880px; margin: 0 auto; }
   .summary-quote{
     font-family: 'Fraunces', serif; font-style: italic; font-size: 1.3rem; text-align: center;
@@ -497,7 +492,7 @@
     <div class="section-title"><span class="badge-num">01</span><h2>Hệ thống 6 bài tập cá nhân 📘</h2></div>
     <div class="work-grid">
 
-      <!-- BÀI 1: Đã gắn link nhúng thư mục Google Drive -->
+      <!-- BÀI 1 -->
       <div class="work-card reveal">
         <span class="idx">01.</span>
         <h3>📘 Máy tính và các thiết bị ngoại vi</h3>
@@ -512,13 +507,12 @@
             <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
             <div class="doc-frame-wrap">
               <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 1" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 1</p></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- BÀI 2: Đã gắn link nhúng thư mục Google Drive -->
+      <!-- BÀI 2 -->
       <div class="work-card reveal">
         <span class="idx">02.</span>
         <h3>📘 Khai thác dữ liệu và thông tin</h3>
@@ -533,13 +527,12 @@
             <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
             <div class="doc-frame-wrap">
               <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 2" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 2</p></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- BÀI 3: Đã gắn link nhúng thư mục Google Drive -->
+      <!-- BÀI 3 -->
       <div class="work-card reveal">
         <span class="idx">03.</span>
         <h3>📘 Tổng quan về trí tuệ nhân tạo</h3>
@@ -554,13 +547,12 @@
             <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
             <div class="doc-frame-wrap">
               <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 3" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 3</p></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- BÀI 4: Đã gắn link nhúng thư mục Google Drive -->
+      <!-- BÀI 4 -->
       <div class="work-card reveal">
         <span class="idx">04.</span>
         <h3>📘 Giao tiếp và hợp tác trong môi trường số</h3>
@@ -575,49 +567,28 @@
             <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
             <div class="doc-frame-wrap">
               <iframe class="doc-frame" src="https://drive.google.com/drive/folders/1y_jjPEBMYW4OlcPbe4oSjNpxIucwzsbu" title="Tài liệu Bài 4" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 4</p></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- BÀI 5 -->
+      <!-- BÀI 5: Đã lược bỏ hoàn toàn nút và phần iframe Xem tại chỗ -->
       <div class="work-card reveal">
         <span class="idx">05.</span>
         <h3>📘 Sáng tạo nội dung số</h3>
         <p class="goal-line">Chuyển hoá kiến thức ngôn ngữ thành các ấn phẩm truyền thông trực quan, sinh động bằng tiếng Anh.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(4)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Tài liệu</button>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="" title="Tài liệu Bài 5" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 5</p></div>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- BÀI 6 -->
+      <!-- BÀI 6: Đã lược bỏ hoàn toàn nút và phần iframe Xem tại chỗ -->
       <div class="work-card reveal">
         <span class="idx">06.</span>
         <h3>📘 An toàn và liêm chính học thuật trong môi trường số</h3>
         <p class="goal-line">Hiểu rõ giới hạn của AI, vận dụng công cụ này minh bạch và trung thực trong các bài tập tiếng Anh học thuật.</p>
         <div class="work-actions">
           <button class="btn-mini btn-mini-detail" type="button" onclick="openDetailModal(5)">🔍 Xem chi tiết</button>
-          <button class="btn-mini btn-mini-doc" type="button" onclick="toggleDocPortal(this)">📖 Tài liệu</button>
-        </div>
-        <div class="doc-portal">
-          <div class="doc-portal-inner">
-            <span class="doc-portal-label">🔖 Cổng đọc tài liệu</span>
-            <div class="doc-frame-wrap">
-              <iframe class="doc-frame" src="" title="Tài liệu Bài 6" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-              <div class="doc-placeholder"><span>📘</span><p>Chưa có tài liệu<br>Dán link nhúng vào <code>src</code> của iframe Bài 6</p></div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -783,18 +754,12 @@
   function toggleDocPortal(btn){
     const card = btn.closest('.work-card');
     const portal = card.querySelector('.doc-portal');
-    portal.classList.toggle('open');
-    btn.textContent = portal.classList.contains('open') ? '📕 Thu gọn' : '📖 Xem tại chỗ';
+    if(portal){
+      portal.classList.toggle('open');
+      btn.textContent = portal.classList.contains('open') ? '📕 Thu gọn' : '📖 Xem tại chỗ';
+    }
   }
   window.toggleDocPortal = toggleDocPortal;
-
-  document.querySelectorAll('.doc-frame-wrap').forEach(wrap => {
-    const frame = wrap.querySelector('.doc-frame');
-    const src = (frame.getAttribute('src') || '').trim();
-    if(!src || src === 'about:blank'){
-      wrap.classList.add('is-empty');
-    }
-  });
 
   // ===== Modal xem chi tiết quy trình thực hiện =====
   const workDetails = [
